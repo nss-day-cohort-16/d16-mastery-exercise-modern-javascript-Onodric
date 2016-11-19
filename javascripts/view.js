@@ -1,45 +1,13 @@
 'use strict';
 
-let Events = require("./events.js"),
-    Robot = require("./model.js");
-
-let gorgon = new Robot.Gorgon();
-console.log("robot: ", gorgon);
-
-let snake = new Robot.Snake();
-console.log("robot: ", snake);
-
-let bee = new Robot.Bee();
-console.log("robot: ", bee);
-
-let bird = new Robot.Bird();
-console.log("robot: ", bird);
-
-let dog = new Robot.Dog();
-console.log("robot: ", dog);
-
-let spider = new Robot.Spider();
-console.log("robot: ", spider);
-
-
-// # Modern JavaScript Developer Quiz
-// # Robot Battledome
-
-// ## Instructions
-
-// ### Code/Tools Requirements
-
 // 1. Use ES6 language features wherever you can. At a minimum, you should be using **let**, **const**, fat arrows, property shorthand, method properties, and string templates.
-// 1. Have a Grunt task running at all times to validate your JavaScript. We will be validating your project and we should see 0 errors.
-// 1. You must have a very basic, just a few, test suite that validates the core logic of the application.
+
 // Some things to test:
 //    + Instantiation of new objects creates the inheritance you expect
 //    + Calculations for health, damage, armor, etc. work properly
 //    + Passing in arguments to set properties like `name` or `number of arms` creates those properties
 
 // 1. You must use jQuery for interacting with the DOM.
-
-// ### Logical Requirements
 
 // You'll be building robots to battle each other.
 
@@ -58,3 +26,5 @@ console.log("robot: ", spider);
 // 1. Once either robot's health is <0 display a message that the battle is over, and which one won. For example...
 
 // ##### The Viper Drone defeated the Behemoth ATV with its flamethrower.
+
+module.exports = null;
