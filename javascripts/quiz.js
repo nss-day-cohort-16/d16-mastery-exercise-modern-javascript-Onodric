@@ -3,24 +3,7 @@
 let Events = require("./events.js"),
     Robot = require("./model.js");
 
-let gorgon = new Robot.Gorgon();
-console.log("robot: ", gorgon);
-
-let snake = new Robot.Snake();
-console.log("robot: ", snake);
-
-let bee = new Robot.Bee();
-console.log("robot: ", bee);
-
-let bird = new Robot.Bird();
-console.log("robot: ", bird);
-
-let dog = new Robot.Dog();
-console.log("robot: ", dog);
-
-let spider = new Robot.Spider();
-console.log("robot: ", spider);
-
+Events();
 
 // # Modern JavaScript Developer Quiz
 // # Robot Battledome

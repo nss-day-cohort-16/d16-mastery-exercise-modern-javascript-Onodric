@@ -1,5 +1,34 @@
 'use strict';
 
+let robot1,
+    robot2,
+    health1 = 0,
+    health2 = 0,
+    counter = 0;
+
+
+let Arena = function(auto1, auto2){
+  robot1 = auto1;
+  robot2 = auto2;
+  health1 = auto1.health;
+  health2 = auto2.health;
+console.log("I was called: ", robot1, robot2);
+  $('#robotName1').text(robot1.robotName);
+  $('#robotName2').text(robot2.robotName);
+  $('#health1').text(robot1.health);
+  $('#health2').text(robot2.health);
+};
+
+let Fight = () => {
+  counter++;
+  health2 -= robot1.damage;
+
+  health1 -= robot2.damage;
+  
+console.log("Round: ", counter);
+};
+
+
 // 1. Use ES6 language features wherever you can. At a minimum, you should be using **let**, **const**, fat arrows, property shorthand, method properties, and string templates.
 
 // Some things to test:
@@ -27,4 +56,4 @@
 
 // ##### The Viper Drone defeated the Behemoth ATV with its flamethrower.
 
-module.exports = null;
+module.exports = {Arena, Fight};

@@ -1,5 +1,52 @@
 @import 'template';
 
+.bigBtn {
+  margin-top: 10vh;
+  padding: 6.5vh;
+  height: 4em;
+  font-size: 3em;
+  text-align: center;
+  background-color: $rgba-second3;
+  border-radius: $roundy;
+  box-shadow: $shady;
+}
+
+.littleBtn {
+  margin-top: 1em;
+  text-align: center;
+  background-color: $rgba-second3;
+  border-radius: .5em;
+  box-shadow: $shady;
+}
+
+.bigBtn:hover,
+.littleBtn:hover {
+  cursor: pointer;
+}
+
+.stylish {
+  border-radius: $roundy;
+  box-shadow: $shady;
+  font-size: 2em;
+  padding: .25em;
+}
+
+.border-me {
+  border-radius: $roundy;
+  border: 1px solid $hex-prime0;
+  box-shadow: $shady;
+}
+
+.contestants {
+  font-size: 2em;
+}
+
+.contestants p {
+  padding: .3em;
+  margin: 0;
+}
+
+
 // # Modern JavaScript Developer Quiz
 // # Robot Battledome
 

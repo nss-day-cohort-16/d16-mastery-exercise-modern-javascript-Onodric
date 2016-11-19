@@ -11,14 +11,91 @@
     <link rel="author" href="humans.txt">
   </head>
   <body>
-    <header id="page-head">
-      
+    <header id="page-head" class="container-fluid">
+      <h1>Malum Automatus</h1>
     </header>
-    <main id="wrapper">
-      
+    <main id="wrapper" class="container">
+      <div class="row" id="setup">
+        <div class="col-md-12" id="robotFight">
+          <div class="col-md-6">
+            <div class="col-md-12">
+              <label for="name1"><h3>Primum Pugnator</h3></label>
+              <input type="text" id="name1" class="form-control stylish" placeholder="Name This Fighter">
+              <label for="model"><h4>Species</h4></label>
+              <select name="species" id="species1" class="form-control stylish" size="1">
+                <option value="null" selected disabled>Select Species</option>
+                <option value="bee" id="Bee">Stymphalian</option>
+                <option value="bird" id="Bird">Harpy</option>
+                <option value="spider" id="Spider">Arachne</option>
+                <option value="dog" id="Dog">Cerebus</option>
+                <option value="snake" id="Snake">Amphisbaena</option>
+                <option value="gorgon" id="Gorgon">Medusa</option>
+              </select>
+              <div class="col-md-12">
+                <div class="col-md-8 col-md-offset-2 littleBtn" id="makeRobot1">
+                  <h4>Make This Automata!</h4>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="col-md-12">
+              <label for="name1"><h3>Secundo Bello</h3></label>
+              <input type="text" id="name2" class="form-control stylish" placeholder="Name This Fighter">
+              <label for="model"><h4>Species</h4></label>
+              <select name="species" id="species2" class="form-control stylish" size="1">
+                <option value="null" selected disabled>Select Species</option>
+                <option value="bee" id="Bee">Stymphalian</option>
+                <option value="bird" id="Bird">Harpy</option>
+                <option value="spider" id="Spider">Arachne</option>
+                <option value="dog" id="Dog">Cerebus</option>
+                <option value="snake" id="Snake">Amphisbaena</option>
+                <option value="gorgon" id="Gorgon">Medusa</option>
+              </select>
+              <div class="col-md-12">
+                <div class="col-md-8 col-md-offset-2 littleBtn" id="makeRobot2">
+                  <h4>Make This Automata!</h4>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6 col-md-offset-3 bigBtn" id="goToArena">
+              <span class="arenaThing" id="switchPage" next="arena">Go to Arena</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row" id="arena">
+        <div class="col-md-12" id="robotFight">
+          
+          <div class="col-md-6 contestants" id="contestant1">
+            <div class="col-md-12 border-me">
+              <h3 id="robotName1">This is a title box</h3>
+            </div>
+            <div class="col-md-12 border-me">
+              <p id="health1">This is stats?</p>
+            </div>
+          </div>
+          <div class="col-md-6 contestants" id="contestant2">
+            <div class="col-md-12 border-me">
+              <h3 id="robotName2">This is a title box</h3>
+            </div>
+            <div class="col-md-12 border-me">
+              <p id="health2">This is stats?</p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6 col-md-offset-3 bigBtn" id="fight">
+              <span class="arenaThing" next="fight">FIGHT!</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
     </main>
-    <footer id="page-foot">
-      
+    <footer id="page-foot" class="container-fluid">
+      <p>&copy; 2016 Argos International</p>
     </footer>
     <script src="dist/jquery.min.js"></script>
     <script src="dist/js/bootstrap.min.js"></script>

@@ -373,10 +373,9 @@ body {
   width: 90%;
   max-width: 1280px;
   background: #ffdeaa;
-  padding: 8em 2.5% 2em 2.5%;
   height: 85vh;
   overflow-y: auto;
-  margin: 0 auto; }
+  margin: 10vh auto 5vh auto; }
   #wrapper h1, #wrapper h2, #wrapper h3, #wrapper h4, #wrapper h5 {
     font-family: "Permanent Marker", cursive; }
 
@@ -408,5 +407,44 @@ body {
   #page-foot p {
     font-weight: bold;
     margin: auto; }
+
+.bigBtn {
+  margin-top: 10vh;
+  padding: 6.5vh;
+  height: 4em;
+  font-size: 3em;
+  text-align: center;
+  background-color: rgba(75, 104, 139, 0.8);
+  border-radius: 0.2em;
+  box-shadow: 0 3px 10px rgba(5, 28, 56, 0.8), inset 0 3px 5px rgba(5, 28, 56, 0.8); }
+
+.littleBtn {
+  margin-top: 1em;
+  text-align: center;
+  background-color: rgba(75, 104, 139, 0.8);
+  border-radius: .5em;
+  box-shadow: 0 3px 10px rgba(5, 28, 56, 0.8), inset 0 3px 5px rgba(5, 28, 56, 0.8); }
+
+.bigBtn:hover,
+.littleBtn:hover {
+  cursor: pointer; }
+
+.stylish {
+  border-radius: 0.2em;
+  box-shadow: 0 3px 10px rgba(5, 28, 56, 0.8), inset 0 3px 5px rgba(5, 28, 56, 0.8);
+  font-size: 2em;
+  padding: .25em; }
+
+.border-me {
+  border-radius: 0.2em;
+  border: 1px solid #553400;
+  box-shadow: 0 3px 10px rgba(5, 28, 56, 0.8), inset 0 3px 5px rgba(5, 28, 56, 0.8); }
+
+.contestants {
+  font-size: 2em; }
+
+.contestants p {
+  padding: .3em;
+  margin: 0; }
 
 /*# sourceMappingURL=style.css.map */
