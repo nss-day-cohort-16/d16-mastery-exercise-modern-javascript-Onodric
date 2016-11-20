@@ -57,7 +57,7 @@ Robot.Walker = function (name) {
   this.typeName = "";
   this.healthBonus = 10;
   this.mobile = true;
-  this.weapon = new Weapon.Constrict();
+  this.weapon = new Weapon.Hammer();
 };
 
 Robot.Walker.prototype = new Robot.Frame(name);
@@ -90,7 +90,7 @@ Robot.Crawler = function (name) {
   this.typeName = "Ouroboros";
   this.healthBonus = 20;
   this.grappler = true;
-  this.weapon = new Weapon.Hammer();
+  this.weapon = new Weapon.Constrict();
 };
 
 Robot.Crawler.prototype = new Robot.Frame(name);

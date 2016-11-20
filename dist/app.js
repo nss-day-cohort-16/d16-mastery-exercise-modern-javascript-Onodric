@@ -34,23 +34,47 @@ let events = function () {
     if ($('select option:selected')[0].value === 'null' || $('select option:selected')[1].value === 'null'){
       alert("Please choose a model!");
     } else {
-console.log("name1: ", $('#name1').val());
-console.log("name2: ", $('#name2').val());
       let robotModel1 = new Robot[$('select option:selected')[0].id]($('#name1').val());
       let robotModel2 = new Robot[$('select option:selected')[1].id]($('#name2').val());
       $('#setup').hide();
       $('#arena').show();
+      if (robotModel2.robotName === 'Unnamed Prototype'){
+        robotModel2.setName('Unnamed Prototype 2');
+      }
+      $('#p1 img').attr({
+        src: `images/${$('#species1 option:selected').attr('id')}.gif`,
+        alt: `${$('#species1 option:selected').text()}`
+      });
+      $('#p2 img').attr({
+        src: `images/${$('#species2 option:selected').attr('id')}.gif`,
+        alt: `${$('#species2 option:selected').text()}`
+      });
       DOMGuy.Arena(robotModel1, robotModel2);
     }
   });
 
   let fightem = $('#fight').click(function(event) {
+    if ($('#health1').text() === '0' || $('#health2').text() === '0'){
+      location.reload();
+    }
     DOMGuy.Fight();
   });
 
-};
+  let showFighter1 = $('#species1').change(function (event) {
+    $('#makeRobot1 img').attr({
+      src: `images/${$('#species1 option:selected').attr('id')}.gif`,
+      alt: `${$('#species1 option:selected').text()}`
+    });
+  });
 
-// THIS should be a big function declaration for all event listeners
+  let showFighter2 = $('#species2').change(function (event) {
+    $('#makeRobot2 img').attr({
+      src: `images/${$('#species2 option:selected').attr('id')}.gif`,
+      alt: `${$('#species2 option:selected').text()}`
+    });
+  });
+
+};
 
 module.exports = events;
 },{"./model.js":3,"./view.js":5}],3:[function(require,module,exports){
@@ -113,7 +137,7 @@ Robot.Walker = function (name) {
   this.typeName = "";
   this.healthBonus = 10;
   this.mobile = true;
-  this.weapon = new Weapon.Constrict();
+  this.weapon = new Weapon.Hammer();
 };
 
 Robot.Walker.prototype = new Robot.Frame(name);
@@ -146,7 +170,7 @@ Robot.Crawler = function (name) {
   this.typeName = "Ouroboros";
   this.healthBonus = 20;
   this.grappler = true;
-  this.weapon = new Weapon.Hammer();
+  this.weapon = new Weapon.Constrict();
 };
 
 Robot.Crawler.prototype = new Robot.Frame(name);
@@ -256,20 +280,45 @@ let Arena = function(auto1, auto2){
   robot2 = auto2;
   health1 = auto1.health;
   health2 = auto2.health;
-console.log("I was called: ", robot1, robot2);
-  $('#robotName1').text(robot1.robotName);
-  $('#robotName2').text(robot2.robotName);
-  $('#health1').text(robot1.health);
-  $('#health2').text(robot2.health);
+  $('#robot1Atk').hide();
+  $('#robot2Atk').hide();
+console.log("robots: ", robot1, robot2);
+  $('#robotName1').text(`${robot1.modelName} ${robot1.robotName}`);
+  $('#robotName2').text(`${robot2.modelName} ${robot2.robotName}`);
+  $('#health1').text(`${robot1.health} health`);
+  $('#health2').text(`${robot2.health} health`);
 };
 
 let Fight = () => {
   counter++;
-  health2 -= robot1.damage;
-
-  health1 -= robot2.damage;
-  
-console.log("Round: ", counter);
+  $('#rndCount').text(`Round ${counter}`);
+  let damage1 = Math.floor(Math.random() * robot1.damage);
+  health2 -= damage1;
+  $('#robot1Atk').text(`${robot1.robotName} attacks with ${robot1.weapon.name} for ${damage1}`);
+  if (health2 <= 0) {
+    $('#health2').text('DESTROYED');
+    $('#p2').addClass("attn");
+    $('#rndCount').text(`${robot1.robotName} Wins!`);
+    $('#results').addClass('winner');
+    return 1;
+  } else {
+    $('#health2').text(`${health2} health`);
+  }
+  let damage2 = Math.floor(Math.random() * robot2.damage);
+  health1 -= damage2;
+  $('#robot2Atk').text(`${robot2.robotName} attacks with ${robot2.weapon.name} for ${damage2}`);
+  if (health1 <= 0) {
+    $('#health1').text('DESTROYED');
+    $('#p1').addClass("attn");
+    $('#rndCount').text(`${robot2.robotName} Wins!`);
+    $('#results').addClass('winner');
+    return 2;
+  } else {
+    $('#health1').text(`${health1} health`);
+  }
+  $('#robot1Atk').show();
+  $('#robot2Atk').show();
+  return -1;
 };
 
 

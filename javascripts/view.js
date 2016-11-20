@@ -12,20 +12,45 @@ let Arena = function(auto1, auto2){
   robot2 = auto2;
   health1 = auto1.health;
   health2 = auto2.health;
-console.log("I was called: ", robot1, robot2);
-  $('#robotName1').text(robot1.robotName);
-  $('#robotName2').text(robot2.robotName);
-  $('#health1').text(robot1.health);
-  $('#health2').text(robot2.health);
+  $('#robot1Atk').hide();
+  $('#robot2Atk').hide();
+console.log("robots: ", robot1, robot2);
+  $('#robotName1').text(`${robot1.modelName} ${robot1.robotName}`);
+  $('#robotName2').text(`${robot2.modelName} ${robot2.robotName}`);
+  $('#health1').text(`${robot1.health} health`);
+  $('#health2').text(`${robot2.health} health`);
 };
 
 let Fight = () => {
   counter++;
-  health2 -= robot1.damage;
-
-  health1 -= robot2.damage;
-  
-console.log("Round: ", counter);
+  $('#rndCount').text(`Round ${counter}`);
+  let damage1 = Math.floor(Math.random() * robot1.damage);
+  health2 -= damage1;
+  $('#robot1Atk').text(`${robot1.robotName} attacks with ${robot1.weapon.name} for ${damage1}`);
+  if (health2 <= 0) {
+    $('#health2').text('DESTROYED');
+    $('#p2').addClass("attn");
+    $('#rndCount').text(`${robot1.robotName} Wins!`);
+    $('#results').addClass('winner');
+    return 1;
+  } else {
+    $('#health2').text(`${health2} health`);
+  }
+  let damage2 = Math.floor(Math.random() * robot2.damage);
+  health1 -= damage2;
+  $('#robot2Atk').text(`${robot2.robotName} attacks with ${robot2.weapon.name} for ${damage2}`);
+  if (health1 <= 0) {
+    $('#health1').text('DESTROYED');
+    $('#p1').addClass("attn");
+    $('#rndCount').text(`${robot2.robotName} Wins!`);
+    $('#results').addClass('winner');
+    return 2;
+  } else {
+    $('#health1').text(`${health1} health`);
+  }
+  $('#robot1Atk').show();
+  $('#robot2Atk').show();
+  return -1;
 };
 
 

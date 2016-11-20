@@ -409,10 +409,24 @@ body {
     margin: auto; }
 
 .bigBtn {
-  margin-top: 10vh;
-  padding: 6.5vh;
-  height: 4em;
+  margin-top: 2.5vh;
+  margin-bottom: 2.5vh;
+  padding: 2.5vh;
   font-size: 3em;
+  text-align: center;
+  background-color: rgba(75, 104, 139, 0.8);
+  border-radius: 0.2em;
+  box-shadow: 0 3px 10px rgba(5, 28, 56, 0.8), inset 0 3px 5px rgba(5, 28, 56, 0.8); }
+
+.bigBtn:hover {
+  cursor: pointer; }
+
+.roundCnt {
+  margin-top: 3vh;
+  margin-bottom: 3vh;
+  padding: 1.5vh;
+  height: 2em;
+  font-size: 2em;
   text-align: center;
   background-color: rgba(75, 104, 139, 0.8);
   border-radius: 0.2em;
@@ -425,10 +439,6 @@ body {
   border-radius: .5em;
   box-shadow: 0 3px 10px rgba(5, 28, 56, 0.8), inset 0 3px 5px rgba(5, 28, 56, 0.8); }
 
-.bigBtn:hover,
-.littleBtn:hover {
-  cursor: pointer; }
-
 .stylish {
   border-radius: 0.2em;
   box-shadow: 0 3px 10px rgba(5, 28, 56, 0.8), inset 0 3px 5px rgba(5, 28, 56, 0.8);
@@ -436,9 +446,10 @@ body {
   padding: .25em; }
 
 .border-me {
+  text-align: center;
   border-radius: 0.2em;
-  border: 1px solid #553400;
-  box-shadow: 0 3px 10px rgba(5, 28, 56, 0.8), inset 0 3px 5px rgba(5, 28, 56, 0.8); }
+  box-shadow: 0 3px 10px rgba(5, 28, 56, 0.8), inset 0 3px 5px rgba(5, 28, 56, 0.8);
+  background-color: #d4ab6a; }
 
 .contestants {
   font-size: 2em; }
@@ -446,5 +457,20 @@ body {
 .contestants p {
   padding: .3em;
   margin: 0; }
+
+.attn {
+  background-color: red; }
+
+.winner {
+  background-color: green; }
+
+img {
+  max-width: 100%;
+  margin-bottom: 1em; }
+
+#p1 img,
+#p2 img {
+  width: 50%;
+  margin: 0 auto; }
 
 /*# sourceMappingURL=style.css.map */
