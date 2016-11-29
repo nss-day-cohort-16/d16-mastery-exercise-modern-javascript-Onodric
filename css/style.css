@@ -473,4 +473,7 @@ img {
   width: 50%;
   margin: 0 auto; }
 
+.flipped {
+  transform: scaleX(-1); }
+
 /*# sourceMappingURL=style.css.map */

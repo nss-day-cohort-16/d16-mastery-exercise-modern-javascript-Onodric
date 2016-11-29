@@ -17,6 +17,7 @@
     <main id="wrapper" class="container">
       <div class="row" id="setup">
         <div class="col-md-12" id="robotFight">
+        <!-- Robot 1 -->
           <div class="col-md-6">
             <div class="col-md-12">
               <label for="name1"><h3>Primum Pugnator</h3></label>
@@ -39,6 +40,7 @@
               </div>
             </div>
           </div>
+          <!-- Robot 2 -->
           <div class="col-md-6">
             <div class="col-md-12">
               <label for="name1"><h3>Secundo Bello</h3></label>
@@ -56,7 +58,7 @@
               <div class="col-md-12">
                 <div class="col-md-8 col-md-offset-2 littleBtn" id="makeRobot2">
                   <h4>Make This Automata!</h4>
-                  <img src="images/default.jpg" alt="A generic robot">
+                  <img src="images/default.jpg" alt="A generic robot" class="flipped">
                 </div>
               </div>
             </div>
@@ -68,17 +70,22 @@
           </div>
         </div>
       </div>
+
       <div class="row" id="arena">
         <div class="col-md-12" id="robotFight">
-          
           <div class="row">
             <div class="col-md-6 col-md-offset-3 roundCnt" id="results">
               <span id="rndCount">Round 1</span>
             </div>
           </div>
-          <div class="row">
+          <div class="row" id="showMeTilTheEnd">
             <div class="col-md-6 col-md-offset-3 bigBtn" id="fight">
               <span class="arenaThing" next="fight">FIGHT!</span>
+            </div>
+          </div>
+          <div class="row" id="hideMeTilTheEnd">
+            <div class="col-md-6 col-md-offset-3 bigBtn" id="reload">
+              <span class="arenaThing" next="reload">Replay!</span>
             </div>
           </div>
           <div class="row">
@@ -96,7 +103,7 @@
                 <h3 id="robotName2">This is a title box</h3>
               </div>
               <div class="col-md-6 col-md-offset-3 border-me" id="p2">
-                <img src="images/default.jpg" alt="a generic robot">
+                <img src="images/default.jpg" alt="a generic robot" class="flipped">
                 <p id="health2">This is stats?</p>
               </div>
             </div>

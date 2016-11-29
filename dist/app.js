@@ -74,6 +74,10 @@ let events = function () {
     });
   });
 
+  let restart = $('#reload').click(()=>{
+    location.reload();
+  });
+
 };
 
 module.exports = events;
@@ -282,7 +286,8 @@ let Arena = function(auto1, auto2){
   health2 = auto2.health;
   $('#robot1Atk').hide();
   $('#robot2Atk').hide();
-console.log("robots: ", robot1, robot2);
+  $('#hideMeTilTheEnd').hide();
+  $('#showMeTilTheEnd').show();
   $('#robotName1').text(`${robot1.modelName} ${robot1.robotName}`);
   $('#robotName2').text(`${robot2.modelName} ${robot2.robotName}`);
   $('#health1').text(`${robot1.health} health`);
@@ -300,6 +305,8 @@ let Fight = () => {
     $('#p2').addClass("attn");
     $('#rndCount').text(`${robot1.robotName} Wins!`);
     $('#results').addClass('winner');
+    $('#showMeTilTheEnd').hide();
+    $('#hideMeTilTheEnd').show();
     return 1;
   } else {
     $('#health2').text(`${health2} health`);
@@ -312,6 +319,8 @@ let Fight = () => {
     $('#p1').addClass("attn");
     $('#rndCount').text(`${robot2.robotName} Wins!`);
     $('#results').addClass('winner');
+    $('#showMeTilTheEnd').hide();
+    $('#hideMeTilTheEnd').show();
     return 2;
   } else {
     $('#health1').text(`${health1} health`);

@@ -51,6 +51,10 @@ let events = function () {
     });
   });
 
+  let restart = $('#reload').click(()=>{
+    location.reload();
+  });
+
 };
 
 module.exports = events;
